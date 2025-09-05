@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>10M$ A.L.I.T.E Club — Your Gateway to Growth</title>
+  <meta name="description" content="A.L.I.T.E Club by AAFM® India — premium membership for MF Distributors, PMS Managers & Wealth Advisors managing large AUMs. Scale faster with tech, consulting, visibility & legacy solutions." />
+
+  <!-- Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0b1020;
+      --bg-soft: #101733;
+      --card: rgba(255,255,255,.06);
+      --border: rgba(255,255,255,.12);
+      --text: #e8ecf8;
+      --muted: #a8b2d3;
+      --brand: #7c4dff;
+      --brand-2: #49e7b2;
+      --accent: #2dd4bf;
+      --glow: 0 10px 30px rgba(124,77,255,.35);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji';
+      background:
+        radial-gradient(1200px 800px at 10% -10%, rgba(76, 29, 149, .35), transparent 50%),
+        radial-gradient(900px 600px at 90% 10%, rgba(16, 185, 129, .18), transparent 50%),
+        radial-gradient(700px 500px at 80% 90%, rgba(59, 130, 246, .14), transparent 50%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Utilities */
+    .container { width: min(1200px, 92%); margin-inline: auto; }
+    .grid { display: grid; gap: 28px; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      gap: .6rem; text-decoration: none; font-weight: 700; letter-spacing: .2px;
+      padding: 14px 22px; border-radius: calc(var(--radius) - 6px);
+      border: 1px solid var(--border); color: white; transition: .25s ease;
+      background: linear-gradient(180deg, rgba(124,77,255,.25), rgba(124,77,255,.14));
+      box-shadow: var(--glow);
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 16px 40px rgba(124,77,255,.45); }
+    .btn.secondary { background: linear-gradient(180deg, rgba(73,231,178,.22), rgba(73,231,178,.1)); box-shadow: 0 10px 30px rgba(73,231,178,.28); }
+
+    .badge { display: inline-flex; align-items: center; gap: .5rem; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--border); background: rgba(255,255,255,.04); color: var(--muted); font-weight: 600; font-size: .9rem; }
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      backdrop-filter: saturate(120%) blur(6px);
+      -webkit-backdrop-filter: saturate(120%) blur(6px);
+      box-shadow: 0 6px 24px rgba(0,0,0,.35);
+    }
+    .card.padded { padding: 26px; }
+
+    header.nav {
+      position: sticky; top: 0; z-index: 50; backdrop-filter: blur(8px);
+      background: linear-gradient(180deg, rgba(11,16,32,.86), rgba(11,16,32,.6));
+      border-bottom: 1px solid var(--border);
+    }
+    header .nav-inner { display:flex; align-items:center; justify-content:space-between; padding: 12px 0; }
+    .brand { display:flex; align-items:center; gap:.7rem; font-weight: 800; letter-spacing:.2px; }
+    .brand i { font-size: 24px; color: var(--brand-2); }
+
+    /* Hero */
+    .hero { padding: 80px 0 40px; position: relative; }
+    .hero h1 { font-size: clamp(2rem, 4vw + .5rem, 3.2rem); line-height: 1.1; margin: 10px 0 14px; }
+    .hero p.sub { color: var(--muted); font-size: clamp(1rem, 1.2vw + .6rem, 1.2rem); }
+    .hero-cta { display:flex; gap: 14px; flex-wrap: wrap; margin-top: 22px; }
+    .hero .stats { margin-top: 28px; display:flex; gap: 22px; flex-wrap: wrap; }
+    .stat { padding: 16px 18px; border-radius: calc(var(--radius) - 8px); border: 1px dashed var(--border); background: rgba(255,255,255,.03); }
+    .stat b { font-size: 1.4rem; }
+
+    /* Sections */
+    section { padding: 70px 0; position: relative; }
+    section h2 { font-size: clamp(1.6rem, 1.6vw + .8rem, 2.2rem); margin: 0 0 14px; }
+    section p.lead { color: var(--muted); max-width: 780px; }
+
+    /* Two-col */
+    .two-col { grid-template-columns: repeat(12, 1fr); align-items: start; }
+    .two-col .left { grid-column: span 6; }
+    .two-col .right { grid-column: span 6; }
+    @media (max-width: 900px) {
+      .two-col .left, .two-col .right { grid-column: 1 / -1; }
+    }
+
+    /* Comparison Table */
+    .plan-grid { display:grid; grid-template-columns: 1.2fr repeat(3, 1fr); gap: 14px; align-items: stretch; overflow: auto; }
+    .plan-grid .head { font-weight: 800; text-transform: uppercase; letter-spacing:.4px; }
+    .plan-grid .cell { padding: 16px; border: 1px solid var(--border); border-radius: 14px; background: rgba(255,255,255,.03); text-align: center; }
+    .plan-grid .cell:first-child { text-align: left; position: sticky; left: 0; background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); }
+    .tick { color: #34d399; font-weight: 800; }
+
+    /* Feature List */
+    .feature { display:flex; gap: 14px; align-items:flex-start; }
+    .feature i { font-size: 22px; margin-top: 3px; color: var(--brand-2); }
+
+    /* Testimonial */
+    .quote { font-size: 1.1rem; color: var(--text); }
+    .quote::before { content: "\201C"; font-size: 3rem; line-height: 0; vertical-align: -.6rem; opacity: .5; margin-right: 6px; }
+
+    /* Footer CTA */
+    .cta { text-align:center; padding: 80px 0; }
+
+    /* Animations */
+    .reveal { opacity: 0; transform: translateY(18px) scale(.98); }
+    .reveal.visible { opacity: 1; transform: translateY(0) scale(1); transition: .7s cubic-bezier(.2,.6,.2,1); }
+    .floaty { animation: floaty 6s ease-in-out infinite; }
+    @keyframes floaty { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-8px) } }
+
+    /* Floating Action Button */
+    .fab { position: fixed; right: 22px; bottom: 22px; z-index: 60; }
+    .fab a { display:flex; align-items:center; gap:10px; padding: 12px 16px; border-radius: 999px; background: linear-gradient(180deg, rgba(73,231,178,.28), rgba(73,231,178,.18)); border:1px solid var(--border); text-decoration:none; color:white; font-weight: 700; box-shadow: 0 10px 28px rgba(34,197,94,.35); }
+
+    /* Small helpers */
+    .muted { color: var(--muted); }
+    .divider { height: 1px; background: var(--border); margin: 26px 0; }
+  </style>
+</head>
+<body>
+  <!-- Nav -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <i class="ri-vip-crown-2-line"></i>
+        <span>10M$ A.L.I.T.E Club</span>
+      </div>
+      <nav style="display:flex; gap:14px; align-items:center;">
+        <a href="#about" class="muted">About</a>
+        <a href="#membership" class="muted">Membership</a>
+        <a href="#plans" class="muted">Plans</a>
+        <a href="#benefits" class="muted">Benefits</a>
+        <a href="#eligibility" class="muted">Eligibility</a>
+        <a href="#cta" class="btn">Become a Member</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container grid two-col">
+      <div class="left reveal">
+        <span class="badge"><i class="ri-shining-2-line"></i> AAFM Learning • Innovation • Technology • Excellence (ALITE)</span>
+        <h1>
+          <span style="background: linear-gradient(90deg, var(--brand), var(--brand-2)); -webkit-background-clip:text; background-clip:text; color: transparent;">10M$ A.L.I.T.E Club</span> – Your Gateway to Growth in Wealth & Finance
+        </h1>
+        <p class="sub">A future-ready membership platform for MF Distributors, PMS Managers & Wealth Advisors managing large AUMs.</p>
+
+        <div class="hero-cta">
+          <a href="#cta" class="btn"><i class="ri-rocket-2-line"></i> Become a Member Today</a>
+          <a href="tel:+917669393032" class="btn secondary"><i class="ri-user-voice-line"></i> Talk to an Advisor</a>
+        </div>
+
+        <div class="stats">
+          <div class="stat"><b id="statCountries">151+</b><br><span class="muted">Countries</span></div>
+          <div class="stat"><b id="statPros">300,000+</b><br><span class="muted">Certified Pros</span></div>
+          <div class="stat"><b id="statYears">20+</b><br><span class="muted">Years in India</span></div>
+        </div>
+      </div>
+
+      <div class="right reveal">
+        <div class="card padded floaty">
+          <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1400&auto=format&fit=crop" alt="Wealth Management" style="width:100%; height: 340px; object-fit: cover; border-radius: 12px;"/>
+          <div style="display:grid; grid-template-columns: repeat(3,1fr); gap:10px; margin-top:12px;">
+            <img class="card" src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=600&auto=format&fit=crop" style="height:90px; object-fit:cover; border-radius:12px;" alt="Tech" />
+            <img class="card" src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=600&auto=format&fit=crop" style="height:90px; object-fit:cover; border-radius:12px;" alt="Analytics" />
+            <img class="card" src="https://images.unsplash.com/photo-1623126908029-128fa852c0e5?q=80&w=600&auto=format&fit=crop" style="height:90px; object-fit:cover; border-radius:12px;" alt="Legacy" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About AAFM® India -->
+  <section id="about">
+    <div class="container grid two-col">
+      <div class="left reveal">
+        <h2>About AAFM® India (Credibility)</h2>
+        <p class="lead">The American Academy of Financial Management® (AAFM® India) is India’s leading professional certification body in financial education.</p>
+        <div class="divider"></div>
+        <div class="grid" style="grid-template-columns: 1fr 1fr;">
+          <div class="feature"><i class="ri-global-line"></i><div><b>Global Reach</b><br><span class="muted">Operating in 151+ countries with 300,000+ certified professionals.</span></div></div>
+          <div class="feature"><i class="ri-graduation-cap-line"></i><div><b>Educational Authority</b><br><span class="muted">Recognized certifications like CWM®, CTEP®, CFOM®, AFA®, Ch.E®.</span></div></div>
+          <div class="feature"><i class="ri-shield-check-line"></i><div><b>Trusted by Industry</b><br><span class="muted">Aligned with SEBI, IFSCA, and global wealth standards.</span></div></div>
+          <div class="feature"><i class="ri-sparkling-2-line"></i><div><b>Leadership in Finance Education</b><br><span class="muted">Future-ready ecosystem for wealth managers and advisors.</span></div></div>
+        </div>
+        <p style="margin-top:14px" class="muted">When you join the Elite Club, you leverage the strength of a globally recognized institution.</p>
+      </div>
+      <div class="right reveal">
+        <div class="card padded">
+          <h3 style="margin-top:0">Why A.L.I.T.E?</h3>
+          <div class="grid" style="grid-template-columns: 1fr 1fr; align-items:start; gap:16px;">
+            <div>
+              <div class="badge" style="margin-bottom:8px"><i class="ri-timer-line"></i> Before</div>
+              <ul class="muted" style="margin:0 0 12px 0; padding-left:18px;">
+                <li>Manual processes slow you down</li>
+                <li>Limited visibility in the market</li>
+                <li>Basic tools with no differentiation</li>
+                <li>Struggles in client succession planning</li>
+              </ul>
+            </div>
+            <div>
+              <div class="badge" style="margin-bottom:8px; color:#16a34a; border-color:rgba(34,197,94,.35); background:rgba(34,197,94,.08)"><i class="ri-sparkling-2-line"></i> After</div>
+              <ul class="muted" style="margin:0 0 12px 0; padding-left:18px;">
+                <li>Automated smart tools & APIs</li>
+                <li>Skilled manpower support</li>
+                <li>Succession planning & Free Will drafting</li>
+                <li>Media visibility & recognition</li>
+                <li>Expert consulting to unlock growth</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Membership (What & Why) -->
+  <section id="membership">
+    <div class="container reveal">
+      <div class="card padded">
+        <div class="grid two-col">
+          <div class="left">
+            <h2>A.L.I.T.E — AAFM Learning • Innovation • Technology • Excellence</h2>
+            <p class="lead">The A.L.I.T.E Club is a premium membership program built for top financial advisors, wealth managers, PMS managers, and distributors who handle large portfolios and want to scale faster, deliver more value, and gain industry visibility.</p>
+          </div>
+          <div class="right">
+            <div class="grid" style="grid-template-columns: 1fr 1fr;">
+              <div class="feature"><i class="ri-cpu-line"></i><div><b>Technology Advantage</b><br><span class="muted">AI-based screeners, PMS APIs, WhatsApp automation.</span></div></div>
+              <div class="feature"><i class="ri-team-line"></i><div><b>Skilled Manpower</b><br><span class="muted">Trained staff to reduce operational load.</span></div></div>
+              <div class="feature"><i class="ri-medal-2-line"></i><div><b>Visibility & Credibility</b><br><span class="muted">Be featured in “Know Your Distributor”.</span></div></div>
+              <div class="feature"><i class="ri-file-shield-2-line"></i><div><b>Succession & Legacy</b><br><span class="muted">Succession membership & Free Will drafting.</span></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Plans -->
+  <section id="plans">
+    <div class="container reveal">
+      <h2>Membership Plans & Deliverables</h2>
+      <p class="lead">Choose the plan that aligns with your scale and ambition: <b>A.L.I.T.E</b> • <b>A.L.I.T.E Professional</b> • <b>A.L.I.T.E Enterprise</b></p>
+      <div class="card padded" style="margin-top:14px">
+        <div class="plan-grid">
+          <div class="cell head">Deliverables</div>
+          <div class="cell head">A.L.I.T.E</div>
+          <div class="cell head">Professional</div>
+          <div class="cell head">Enterprise</div>
+
+          <div class="cell">Succession Membership</div>
+          <div class="cell">1M</div>
+          <div class="cell">6M</div>
+          <div class="cell">1Y</div>
+
+          <div class="cell">Smart Screener</div>
+          <div class="cell">Equity 20</div>
+          <div class="cell">Equity + MF</div>
+          <div class="cell">Equity + MFV</div>
+
+          <div class="cell">WhatsApp API</div>
+          <div class="cell">1M</div>
+          <div class="cell">1M</div>
+          <div class="cell">1Y</div>
+
+          <div class="cell">Business Consulting (30 mins)</div>
+          <div class="cell">1 Session</div>
+          <div class="cell">2 Sessions</div>
+          <div class="cell">Unlimited</div>
+
+          <div class="cell">Skilled Manpower</div>
+          <div class="cell"><span class="tick">Included</span></div>
+          <div class="cell"><span class="tick">Included</span></div>
+          <div class="cell"><span class="tick">Included</span></div>
+
+          <div class="cell">PMS API Integration</div>
+          <div class="cell"><span class="tick">Included</span></div>
+          <div class="cell"><span class="tick">Included</span></div>
+          <div class="cell"><span class="tick">Included</span></div>
+
+          <div class="cell">Free Will</div>
+          <div class="cell">—</div>
+          <div class="cell"><span class="tick">Included</span></div>
+          <div class="cell"><span class="tick">Included</span></div>
+
+          <div class="cell">Commodity Research</div>
+          <div class="cell">1M</div>
+          <div class="cell">3M</div>
+          <div class="cell">1Y</div>
+
+          <div class="cell">Media Visibility – KYD</div>
+          <div class="cell">1</div>
+          <div class="cell">2</div>
+          <div class="cell">3</div>
+        </div>
+        <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:18px;">
+          <a class="btn" href="#cta"><i class="ri-vip-diamond-line"></i> Choose Your Plan</a>
+          <a class="btn secondary" href="#" onclick="downloadBrochure(event)"><i class="ri-download-2-line"></i> Download Membership Brochure</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section id="benefits">
+    <div class="container reveal">
+      <h2>Benefits of Joining A.L.I.T.E Club</h2>
+      <div class="grid" style="grid-template-columns: repeat(3, 1fr);">
+        <div class="card padded">
+          <h3>Business Growth</h3>
+          <p class="muted">Grow your AUM with automation, skilled manpower, and consulting support.</p>
+        </div>
+        <div class="card padded">
+          <h3>Technology Advantage</h3>
+          <p class="muted">Use AI-based Smart Screeners, PMS APIs, and WhatsApp automation to engage clients better.</p>
+        </div>
+        <div class="card padded">
+          <h3>Succession & Legacy</h3>
+          <p class="muted">Offer clients Succession Membership & Free Will to deepen trust and continuity.</p>
+        </div>
+        <div class="card padded">
+          <h3>Visibility & Credibility</h3>
+          <p class="muted">Get featured in “Know Your Distributor” media coverage to enhance brand recognition.</p>
+        </div>
+        <div class="card padded">
+          <h3>Skilled Manpower & Consulting</h3>
+          <p class="muted">Access trained staff and expert advisors to optimize decisions and reduce hassle.</p>
+        </div>
+        <div class="card padded">
+          <h3>Market Intelligence</h3>
+          <p class="muted">Stay ahead with commodity research and data-backed insights for clients.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Eligibility & Why Now -->
+  <section id="eligibility">
+    <div class="container grid two-col">
+      <div class="left reveal">
+        <h2>Who Can Join?</h2>
+        <div class="card padded">
+          <ul class="muted" style="margin:0; padding-left:18px;">
+            <li>Manage <b>₹100 Cr+ AUM in Mutual Funds</b>, OR</li>
+            <li>Manage <b>₹10 Cr+ AUM in PMS/AIF</b></li>
+          </ul>
+          <p style="margin-top:10px" class="muted">Designed only for top-performing professionals who want to scale to the next level.</p>
+        </div>
+      </div>
+      <div class="right reveal">
+        <h2>Why Now? (Urgency)</h2>
+        <div class="grid" style="grid-template-columns: 1fr 1fr;">
+          <div class="card padded" style="text-align:center;">
+            <b class="counter" data-target="27">0</b><span style="opacity:.8">% CAGR</span>
+            <p class="muted" style="margin-top:8px">Alternative Investments growth</p>
+          </div>
+          <div class="card padded" style="text-align:center;">
+            <b class="counter" data-target="30">0</b><span style="opacity:.8">B+</span>
+            <p class="muted" style="margin-top:8px">Family office assets in India (USD)</p>
+          </div>
+          <div class="card padded" style="text-align:center;">
+            <b class="counter" data-target="100">0</b><span style="opacity:.8">%</span>
+            <p class="muted" style="margin-top:8px">PMS & AIF expanding under regulators</p>
+          </div>
+          <div class="card padded" style="text-align:center;">
+            <b class="counter" data-target="10">0</b><span style="opacity:.8">Y</span>
+            <p class="muted" style="margin-top:8px">Lead the next decade with ALITE</p>
+          </div>
+        </div>
+        <p class="muted" style="margin-top:10px">Those who adapt early with tech, consulting, and visibility will lead the next decade of wealth advisory.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials / Use Case -->
+  <section id="testimonials">
+    <div class="container reveal">
+      <div class="card padded">
+        <div class="grid" style="grid-template-columns: 80px 1fr; align-items: center;">
+          <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=300&auto=format&fit=crop" alt="Member" style="width:70px; height:70px; border-radius: 50%; object-fit: cover; border:1px solid var(--border);"/>
+          <div>
+            <p class="quote">After joining Elite Club, I automated my reporting, enhanced client trust with succession tools, and <b>doubled my visibility</b> in just 6 months.</p>
+            <div class="muted">— MF Distributor</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section id="cta" class="cta">
+    <div class="container reveal">
+      <h2>Ready to Scale Your Business?</h2>
+      <p class="lead">Join the 10M$ A.L.I.T.E Club today and unlock growth, visibility, and legacy for your practice.</p>
+      <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:10px;">
+        <a href="#" class="btn"><i class="ri-vip-crown-line"></i> Become a Member Now</a>
+        <a href="tel:+917669393032" class="btn secondary"><i class="ri-phone-line"></i> Call: +91 76693 93032</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container" style="padding: 32px 0; border-top: 1px solid var(--border); display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+      <div class="muted">© <span id="year"></span> AAFM® India — A.L.I.T.E Club. All rights reserved.</div>
+      <div style="display:flex; gap:10px; align-items:center;">
+        <a class="muted" href="#">Privacy</a>
+        <a class="muted" href="#">Terms</a>
+        <a class="muted" href="#">Support</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating CTA -->
+  <div class="fab">
+    <a href="tel:+917669393032"><i class="ri-phone-fill"></i> +91 76693 93032</a>
+  </div>
+
+  <script>
+    // Smooth reveal on scroll
+    const onIntersect = (entries, obs) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          obs.unobserve(e.target);
+        }
+      });
+    };
+    const io = new IntersectionObserver(onIntersect, { threshold: .16 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // Simple counters
+    const counterEls = document.querySelectorAll('.counter');
+    const animateCounter = (el) => {
+      const target = +el.dataset.target;
+      let current = 0;
+      const step = Math.max(1, Math.floor(target / 100));
+      const tick = () => {
+        current += step;
+        if (current >= target) { current = target; }
+        el.textContent = current;
+        if (current < target) requestAnimationFrame(tick);
+      };
+      tick();
+    };
+    const countersObserver = new IntersectionObserver((entries, obs) => {
+      entries.forEach(e => { if (e.isIntersecting) { animateCounter(e.target); obs.unobserve(e.target); } });
+    }, { threshold: .6 });
+    counterEls.forEach(el => countersObserver.observe(el));
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Download brochure (creates a simple PDF placeholder)
+    function downloadBrochure(e){
+      e.preventDefault();
+      const content = `A.L.I.T.E Club — Membership Brochure\n\nPlans: ALITE / Professional / Enterprise\nDeliverables Snapshot: Succession, Screeners, WhatsApp API, Consulting, Manpower, PMS API, Free Will, Commodity Research, Media Visibility.`;
+      const blob = new Blob([content], {type: 'application/pdf'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'ALITE-Membership-Brochure.pdf'; a.click();
+      URL.revokeObjectURL(url);
+    }
+    window.downloadBrochure = downloadBrochure;
+
+    // Smooth anchor scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const id = a.getAttribute('href');
+        if(id.length > 1){
+          e.preventDefault();
+          document.querySelector(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      })
+    });
+  </script>
+</body>
+</html>
